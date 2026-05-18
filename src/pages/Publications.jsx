@@ -57,7 +57,7 @@ export default function Publications() {
     <PageTransition>
       <article className="page">
         <div className="kanji-watermark">論文</div>
-        <p className="subtitle">{p.subtitle}</p>
+        {p.subtitle && <p className="subtitle">{p.subtitle}</p>}
         <h1>
           {p.h1a}<span className="accent">{p.h1b}</span>
         </h1>

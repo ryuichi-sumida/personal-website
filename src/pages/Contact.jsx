@@ -24,7 +24,7 @@ export default function Contact() {
     <PageTransition>
       <article className="page">
         <div className="kanji-watermark">連絡</div>
-        <p className="subtitle">{c.subtitle}</p>
+        {c.subtitle && <p className="subtitle">{c.subtitle}</p>}
         <h1>
           {c.h1a} <span className="accent">{c.h1b}</span>
         </h1>

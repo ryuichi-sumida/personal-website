@@ -17,22 +17,21 @@ const translations = {
       h1a: 'Ryuichi',
       h1b: 'Sumida',
       tag: 'AI researcher · Kyoto · snowboarder off-season.',
-      aboutHeading: 'About',
-      bio: [
-        [
-          "I'm a Ph.D. student at Kyoto University researching long-term memory for conversational AI — how chatbots should remember, forget, and grow with the people they talk to.",
-          "My work draws on psychological models of memory importance and forgetting, retrieval-augmented generation, and on-device multimodal inference.",
-        ],
-        [
-          'I play soccer through the snowboard off-season (April – October),',
-          'and snowboard during the on-season (November – March).',
-        ],
+      researchHeading: 'Research',
+      research: [
+        "I'm a Ph.D. student at Kyoto University researching long-term memory for conversational AI — how chatbots should remember, forget, and grow with the people they talk to.",
+        'My work draws on psychological models of memory importance and forgetting, retrieval-augmented generation, and on-device multimodal inference.',
       ],
       currentlyHeading: 'Currently',
       currently: [
         <>Building <em>Luke</em> — a fully on-device AI life-companion for iPhone.</>,
         'Researching multimodal long-term memory for conversational AI.',
         'Collaborating with Equmenopolis on long-term memory for avatar-based English conversation.',
+      ],
+      hobbiesHeading: 'Hobbies',
+      hobbies: [
+        'I play soccer through the snowboard off-season (April – October),',
+        'and snowboard during the on-season (November – March).',
       ],
     },
     publications: {
@@ -87,20 +86,14 @@ const translations = {
       ],
     },
     about: {
-      subtitle: 'し · ょ · う · か · い',
+      subtitle: '',
       h1a: '住田',
       h1b: '龍宇一',
-      tag: 'AI研究者 · 京都 · オフシーズンはスノーボード',
-      aboutHeading: 'About',
-      bio: [
-        [
-          '京都大学博士課程に在籍し、対話AIのための長期記憶を研究しています。',
-          'チャットボットがどのように記憶し、忘れ、対話相手と共に成長していくべきか — 心理学に基づく記憶の重要度・忘却モデル、検索拡張生成（RAG）、オンデバイスでのマルチモーダル推論を軸に取り組んでいます。',
-        ],
-        [
-          'スノーボードのオフシーズン（4月〜10月）はサッカーをしていて、',
-          'オンシーズン（11月〜3月）はスノーボードに出かけています。',
-        ],
+      tag: '',
+      researchHeading: '研究',
+      research: [
+        '京都大学博士課程に在籍し、対話AIのための長期記憶を研究しています。',
+        'チャットボットがどのように記憶し、忘れ、対話相手と共に成長していくべきか — 心理学に基づく記憶の重要度・忘却モデル、検索拡張生成（RAG）、オンデバイスでのマルチモーダル推論を軸に取り組んでいます。',
       ],
       currentlyHeading: '現在',
       currently: [
@@ -108,16 +101,21 @@ const translations = {
         '対話AIのためのマルチモーダル長期記憶を研究中。',
         '株式会社Equmenopolisと連携し、アバター英会話への長期記憶機能を実装中。',
       ],
+      hobbiesHeading: '趣味',
+      hobbies: [
+        'スノーボードのオフシーズン（4月〜10月）はサッカーをしていて、',
+        'オンシーズン（11月〜3月）はスノーボードに出かけています。',
+      ],
     },
     publications: {
-      subtitle: 'ろ · ん · ぶ · ん',
+      subtitle: '',
       h1a: '論',
       h1b: '文',
       tag: '長期記憶・RAG・マルチモーダルアライメントに関する選定論文。',
       papersHeading: '論文',
     },
     cv: {
-      subtitle: 'り · れ · き',
+      subtitle: '',
       h1a: '履',
       h1b: '歴',
       tag: '学歴・職歴と、いくつかの寄り道。',
@@ -143,7 +141,7 @@ const translations = {
       languages: ['日本語 — ネイティブ', 'English — Professional'],
     },
     contact: {
-      subtitle: 'れ · ん · ら · く',
+      subtitle: '',
       h1a: 'お問い',
       h1b: '合わせ',
       tag: '研究・共同研究・日本でのスノーボード談義など、お気軽にどうぞ。',
