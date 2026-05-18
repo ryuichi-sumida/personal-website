@@ -1,17 +1,12 @@
 import { NavLink, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
+import { useLanguage } from '../i18n.jsx'
 import './Menu.css'
 
-const items = [
-  { to: '/', label: 'About', kanji: '紹介', romaji: 'shōkai' },
-  { to: '/publications', label: 'Publications', kanji: '論文', romaji: 'ronbun' },
-  { to: '/projects', label: 'Projects', kanji: '作品', romaji: 'sakuhin' },
-  { to: '/cv', label: 'CV', kanji: '履歴', romaji: 'rireki' },
-  { to: '/contact', label: 'Contact', kanji: '連絡', romaji: 'renraku' },
-]
-
 export default function Menu() {
+  const { t, toggle, lang } = useLanguage()
+  const items = t.menu.items
   const location = useLocation()
   const listRef = useRef(null)
   const [indicator, setIndicator] = useState({ top: 0, height: 0 })
@@ -61,9 +56,20 @@ export default function Menu() {
           </div>
           <div>
             <div className="menu-brand-name">Ryuichi Sumida</div>
-            <div className="menu-brand-sub">京都 / Kyoto</div>
+            <div className="menu-brand-sub">{t.menu.brandSub}</div>
           </div>
         </div>
+
+        <button
+          type="button"
+          className="menu-lang-toggle"
+          onClick={toggle}
+          aria-label="Toggle language"
+        >
+          <span className={lang === 'en' ? 'active' : ''}>EN</span>
+          <span className="divider">/</span>
+          <span className={lang === 'ja' ? 'active' : ''}>日本語</span>
+        </button>
 
         <nav>
           <ul ref={listRef} className="menu-list">

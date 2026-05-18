@@ -5,7 +5,6 @@ import SnowfallCanvas from './components/SnowfallCanvas'
 import MountainBg from './components/MountainBg'
 import About from './pages/About'
 import Publications from './pages/Publications'
-import Projects from './pages/Projects'
 import CV from './pages/CV'
 import Contact from './pages/Contact'
 
@@ -22,7 +21,6 @@ export default function App() {
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<About />} />
             <Route path="/publications" element={<Publications />} />
-            <Route path="/projects" element={<Projects />} />
             <Route path="/cv" element={<CV />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

@@ -1,53 +1,102 @@
 import PageTransition from '../components/PageTransition'
+import { useLanguage } from '../i18n.jsx'
 import './pages.css'
 
 const pubs = [
   {
-    year: '2026',
-    title: 'Sample paper title — replace with your actual publication',
-    venue: 'Conference / Journal',
-    authors: 'R. Sumida, A. Author, B. Author',
-    link: '#',
+    year: '2024',
+    title: {
+      en: 'Should a RAG Chatbot Forget Unimportant Conversations? Exploring Importance and Forgetting with Psychological Insights',
+      ja: 'RAG チャットボットは重要でない会話を忘れるべきか？ — 心理学における発見を用いた重要度と忘却の探究',
+    },
+    venue: {
+      en: 'JSAI SIG-SLUD (15th Dialogue System Symposium)',
+      ja: '人工知能学会 SLUD研究会（第15回対話システムシンポジウム）',
+    },
+    authors: 'R. Sumida, K. Inoue, T. Kawahara',
+    note: {
+      en: '🏆 JSAI SIG Best Paper Award (2024)',
+      ja: '🏆 2024年度 人工知能学会 研究会優秀賞',
+    },
+    award: true,
+    link: 'https://doi.org/10.11517/jsaislud.102.0_28',
   },
   {
     year: '2025',
-    title: 'Another sample publication',
-    venue: 'Workshop on Something Interesting',
-    authors: 'R. Sumida, C. Collaborator',
-    link: '#',
+    title: {
+      en: 'Enhancing Long-term RAG Chatbots with Psychological Models of Memory Importance and Forgetting',
+      ja: '記憶の重要度と忘却に関する心理学モデルによる長期RAGチャットボットの拡張',
+    },
+    venue: {
+      en: 'Dialogue & Discourse (journal)',
+      ja: 'Dialogue & Discourse (ジャーナル)',
+    },
+    authors: 'R. Sumida, K. Inoue, T. Kawahara',
+    note: { en: 'Accepted (2025)', ja: '採択 (2025)' },
+    link: 'https://aclanthology.org/2025.dnd-16.12/',
+  },
+  {
+    year: '2026',
+    title: {
+      en: 'MMA-ASIA: A Multilingual and Multimodal Alignment Framework for Culturally-Grounded Evaluation',
+      ja: 'MMA-ASIA: 文化的根拠に基づく評価のための多言語・マルチモーダルアライメントフレームワーク',
+    },
+    venue: { en: 'ACL 2026 (to appear)', ja: 'ACL 2026（採択）' },
+    authors: { en: 'co-authored', ja: '共著' },
+    note: { en: 'Accepted', ja: '採択' },
+    link: 'https://arxiv.org/abs/2510.08608',
   },
 ]
 
+const pick = (v, lang) => (v && typeof v === 'object' && !v.props ? v[lang] : v)
+
 export default function Publications() {
+  const { t, lang } = useLanguage()
+  const p = t.publications
   return (
     <PageTransition>
       <article className="page">
         <div className="kanji-watermark">論文</div>
-        <p className="subtitle">p · u · b · l · i · c · a · t · i · o · n · s</p>
+        <p className="subtitle">{p.subtitle}</p>
         <h1>
-          Publi<span className="accent">cations</span>
+          {p.h1a}<span className="accent">{p.h1b}</span>
         </h1>
-        <p className="hero-tag">Selected papers, preprints, and writing.</p>
+        <p className="hero-tag">{p.tag}</p>
 
-        <h2>Papers</h2>
+        <h2>{p.papersHeading}</h2>
         <ul className="pub-list">
-          {pubs.map((p, i) => (
+          {pubs.map((pub, i) => (
             <li key={i} className="pub-item">
-              <div className="pub-year">{p.year}</div>
+              <div className="pub-year">{pub.year}</div>
               <div className="pub-body">
-                <a href={p.link} className="pub-title">{p.title}</a>
+                <a
+                  href={pub.link}
+                  className="pub-title"
+                  target={pub.link.startsWith('http') ? '_blank' : undefined}
+                  rel="noreferrer"
+                >
+                  {pick(pub.title, lang)}
+                </a>
                 <div className="pub-meta">
-                  <span>{p.authors}</span>
-                  <span className="pub-venue">{p.venue}</span>
+                  <span>{pick(pub.authors, lang)}</span>
+                  <span className="pub-venue">{pick(pub.venue, lang)}</span>
                 </div>
+                {pub.note && (
+                  <div
+                    className="pub-meta"
+                    style={{
+                      marginTop: 4,
+                      color: pub.award ? '#e8b08a' : 'var(--slate-soft)',
+                      fontWeight: pub.award ? 600 : 400,
+                    }}
+                  >
+                    {pick(pub.note, lang)}
+                  </div>
+                )}
               </div>
             </li>
           ))}
         </ul>
-
-        <p style={{ marginTop: 32, color: 'var(--slate-soft)', fontSize: '0.85rem' }}>
-          ※ Replace these with your real publications in <code>src/pages/Publications.jsx</code>.
-        </p>
       </article>
     </PageTransition>
   )

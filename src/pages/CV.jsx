@@ -1,57 +1,63 @@
 import PageTransition from '../components/PageTransition'
+import { useLanguage } from '../i18n.jsx'
 import './pages.css'
 
+const skills = ['Python', 'Swift', 'PyTorch', 'CoreML', 'Metal', 'ARKit', 'llama.cpp', 'GGUF', 'NLP', 'RAG', 'Multimodal']
+
 export default function CV() {
+  const { t } = useLanguage()
+  const c = t.cv
   return (
     <PageTransition>
       <article className="page">
         <div className="kanji-watermark">履歴</div>
-        <p className="subtitle">c · v</p>
+        <p className="subtitle">{c.subtitle}</p>
         <h1>
-          Curri<span className="accent">culum</span>
+          {c.h1a}<span className="accent">{c.h1b}</span>
         </h1>
-        <p className="hero-tag">Education, work, and a few side quests.</p>
+        <p className="hero-tag">{c.tag}</p>
 
-        <h2>Education</h2>
+        <h2>{c.educationHeading}</h2>
         <ul className="cv-list">
-          <li>
-            <span className="cv-when">2020 – 2024</span>
-            <span className="cv-what">B.Sc. — your university</span>
-          </li>
-          <li>
-            <span className="cv-when">2024 – present</span>
-            <span className="cv-what">M.Sc. / Ph.D. / role — your program</span>
-          </li>
+          {c.education.map((e, i) => (
+            <li key={i}>
+              <span className="cv-when">{e.when}</span>
+              <span className="cv-what">{e.what}</span>
+            </li>
+          ))}
         </ul>
 
-        <h2>Experience</h2>
+        <h2>{c.experienceHeading}</h2>
         <ul className="cv-list">
-          <li>
-            <span className="cv-when">2025 – now</span>
-            <span className="cv-what">AI Researcher — your lab/company</span>
-          </li>
-          <li>
-            <span className="cv-when">2024</span>
-            <span className="cv-what">Internship — somewhere cool</span>
-          </li>
+          {c.experience.map((e, i) => (
+            <li key={i}>
+              <span className="cv-when">{e.when}</span>
+              <span className="cv-what">{e.what}</span>
+            </li>
+          ))}
         </ul>
 
-        <h2>Skills</h2>
+        <h2>{c.awardsHeading}</h2>
+        <ul className="cv-list">
+          {c.awards.map((e, i) => (
+            <li key={i}>
+              <span className="cv-when">{e.when}</span>
+              <span className="cv-what">{e.what}</span>
+            </li>
+          ))}
+        </ul>
+
+        <h2>{c.skillsHeading}</h2>
         <div className="chips">
-          {['Python', 'PyTorch', 'JAX', 'TensorFlow', 'Rust', 'TypeScript', 'D3.js', 'BigQuery', 'NLP', 'CV', 'RL'].map((s) => (
+          {skills.map((s) => (
             <span key={s} className="chip">{s}</span>
           ))}
         </div>
 
-        <h2>Languages</h2>
+        <h2>{c.languagesHeading}</h2>
         <ul className="bullets">
-          <li>日本語 — native</li>
-          <li>English — professional</li>
+          {c.languages.map((l, i) => <li key={i}>{l}</li>)}
         </ul>
-
-        <p style={{ marginTop: 48 }}>
-          <a className="link" href="#">Download full CV (PDF) →</a>
-        </p>
       </article>
     </PageTransition>
   )

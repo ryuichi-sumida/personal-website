@@ -1,32 +1,40 @@
 import PageTransition from '../components/PageTransition'
+import { useLanguage } from '../i18n.jsx'
 import './pages.css'
 
 const links = [
-  { label: 'Email', value: 'rui.sumida1@gmail.com', href: 'mailto:rui.sumida1@gmail.com' },
-  { label: 'GitHub', value: 'github.com/rui-dataanalysis', href: 'https://github.com/rui-dataanalysis' },
-  { label: 'Portfolio', value: 'rui-dataanalysis.github.io', href: 'https://rui-dataanalysis.github.io/#portfolio' },
-  { label: 'X / Twitter', value: '@yourhandle', href: '#' },
-  { label: 'LinkedIn', value: 'linkedin.com/in/yourhandle', href: '#' },
+  {
+    label: { en: 'Email', ja: 'Email' },
+    value: 'sumida.ryuichi.65m@st.kyoto-u.ac.jp',
+    href: 'mailto:sumida.ryuichi.65m@st.kyoto-u.ac.jp',
+  },
+  {
+    label: { en: 'GitHub', ja: 'GitHub' },
+    value: 'github.com/ryuichi-sumida',
+    href: 'https://github.com/ryuichi-sumida',
+  },
 ]
 
+const pick = (v, lang) => (v && typeof v === 'object' ? v[lang] : v)
+
 export default function Contact() {
+  const { t, lang } = useLanguage()
+  const c = t.contact
   return (
     <PageTransition>
       <article className="page">
         <div className="kanji-watermark">連絡</div>
-        <p className="subtitle">c · o · n · t · a · c · t</p>
+        <p className="subtitle">{c.subtitle}</p>
         <h1>
-          Get in <span className="accent">touch</span>
+          {c.h1a} <span className="accent">{c.h1b}</span>
         </h1>
-        <p className="hero-tag">
-          Always happy to chat about research, collaborations, or where to snowboard in Japan.
-        </p>
+        <p className="hero-tag">{c.tag}</p>
 
         <ul className="contact-list">
-          {links.map((l) => (
-            <li key={l.label}>
+          {links.map((l, i) => (
+            <li key={i}>
               <a href={l.href} target={l.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer">
-                <span className="contact-label">{l.label}</span>
+                <span className="contact-label">{pick(l.label, lang)}</span>
                 <span className="contact-value">{l.value}</span>
                 <span className="contact-arrow">→</span>
               </a>

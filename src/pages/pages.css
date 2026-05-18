@@ -6,6 +6,33 @@
   line-height: 1.6;
 }
 
+.about-photo {
+  margin: 0 0 48px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-photo img {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(186, 230, 253, 0.15);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(186, 230, 253, 0.05);
+  display: block;
+}
+
+.about-photo figcaption {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--slate-soft);
+  letter-spacing: 0.12em;
+  margin-top: 10px;
+}
+
 .bullets {
   list-style: none;
   display: flex;

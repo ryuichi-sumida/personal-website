@@ -65,6 +65,39 @@
   letter-spacing: 0.1em;
 }
 
+.menu-lang-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  padding: 6px 10px;
+  background: rgba(186, 230, 253, 0.04);
+  border: 1px solid rgba(186, 230, 253, 0.12);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--slate-soft);
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.menu-lang-toggle:hover {
+  background: rgba(186, 230, 253, 0.08);
+  border-color: rgba(186, 230, 253, 0.24);
+}
+
+.menu-lang-toggle .active {
+  color: var(--snow);
+  font-weight: 600;
+}
+
+.menu-lang-toggle .divider {
+  opacity: 0.4;
+}
+
 nav {
   flex: 1;
 }
