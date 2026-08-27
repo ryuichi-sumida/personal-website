@@ -5,8 +5,8 @@ import './pages.css'
 const links = [
   {
     label: { en: 'Email', ja: 'Email' },
-    value: 'rui.sumida1@gmail.com',
-    href: 'mailto:rui.sumida1@gmail.com',
+    value: 'rui.sumida@gmail.com',
+    href: 'mailto:rui.sumida@gmail.com',
   },
   {
     label: { en: 'GitHub', ja: 'GitHub' },
