@@ -58,10 +58,15 @@ const translations = {
         { when: 'Sep 2025 – present', what: 'National Institute of Informatics, Bono Lab — dialogue systems on AR/VR devices' },
         { when: 'Aug 2023 – Mar 2024', what: 'RIKEN, Guardian Robot Project — multimodal dialogue agents' },
       ],
-      awardsHeading: 'Awards',
+      awardsHeading: 'Awards & Grants',
       awards: [
         { when: '2024', what: 'JSAI SIG Best Paper (人工知能学会 研究会優秀賞)' },
         { when: '2025', what: 'APSIPA ASC 3-Minute Thesis Competition — 2nd Place' },
+        {
+          when: '2026',
+          what: 'IPA MITOU Advanced Program — "An On-Device AI Partner That Remembers Your Life"',
+          href: 'https://www.ipa.go.jp/jinzai/mitou/advanced/2026first/gaiyou-is-1.html',
+        },
       ],
       skillsHeading: 'Skills',
       languagesHeading: 'Languages',
@@ -131,10 +136,15 @@ const translations = {
         { when: '2025年9月 – 現在', what: '国立情報学研究所 坊農研究室 — AR/VRデバイス上の対話システム開発' },
         { when: '2023年8月 – 2024年3月', what: '理化学研究所 ガーディアンロボットプロジェクト — マルチモーダル対話エージェント' },
       ],
-      awardsHeading: '受賞',
+      awardsHeading: '受賞・採択',
       awards: [
         { when: '2024', what: '人工知能学会 研究会優秀賞' },
         { when: '2025', what: 'APSIPA ASC 3-Minute Thesis Competition 2位' },
+        {
+          when: '2026',
+          what: 'IPA 未踏アドバンスト事業 採択 —「人生を記憶するオンデバイスAIパートナーの開発」',
+          href: 'https://www.ipa.go.jp/jinzai/mitou/advanced/2026first/gaiyou-is-1.html',
+        },
       ],
       skillsHeading: 'スキル',
       languagesHeading: '言語',

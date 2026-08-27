@@ -42,7 +42,13 @@ export default function CV() {
           {c.awards.map((e, i) => (
             <li key={i}>
               <span className="cv-when">{e.when}</span>
-              <span className="cv-what">{e.what}</span>
+              <span className="cv-what">
+                {e.href ? (
+                  <a href={e.href} target="_blank" rel="noreferrer">{e.what}</a>
+                ) : (
+                  e.what
+                )}
+              </span>
             </li>
           ))}
         </ul>
