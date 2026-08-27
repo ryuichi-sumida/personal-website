@@ -32,7 +32,6 @@ const pubs = [
       ja: 'Dialogue & Discourse (ジャーナル)',
     },
     authors: 'R. Sumida, K. Inoue, T. Kawahara',
-    note: { en: 'Accepted (2025)', ja: '採択 (2025)' },
     link: 'https://aclanthology.org/2025.dnd-16.12/',
   },
   {
@@ -51,9 +50,8 @@ const pubs = [
       en: 'Memory-Driven Self-Disclosure and Relational Turning Points: A Longitudinal Multimodal Study of Human-AI Interaction',
       ja: '記憶に基づく自己開示と関係の転換点 — 人間-AIインタラクションの縦断的マルチモーダル研究',
     },
-    venue: { en: 'ICMI 2026 (to appear)', ja: 'ICMI 2026（採択）' },
+    venue: { en: 'ICMI 2026', ja: 'ICMI 2026' },
     authors: 'R. Sumida, M. Saeki, M. Eguchi, S. Yoshikawa, K. Inoue, T. Kawahara, Y. Matsuyama',
-    note: { en: 'Accepted', ja: '採択' },
     link: 'https://arxiv.org/abs/2607.14593',
   },
   {
@@ -62,9 +60,8 @@ const pubs = [
       en: 'MemUse: Moving Memory Evaluation from Direct QA to Natural Integration in Long-Term Human-AI Conversation',
       ja: 'MemUse: 長期的な人間-AI対話における記憶評価の直接QAから自然な統合への転換',
     },
-    venue: { en: 'EMNLP 2026 (Main Conference, to appear)', ja: 'EMNLP 2026（本会議・採択）' },
+    venue: { en: 'EMNLP 2026 (Main Conference)', ja: 'EMNLP 2026（本会議）' },
     authors: 'R. Sumida, K. Inoue, T. Kawahara',
-    note: { en: 'Accepted', ja: '採択' },
     link: 'https://arxiv.org/abs/2608.24189',
   },
 ]
