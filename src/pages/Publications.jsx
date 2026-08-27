@@ -87,7 +87,7 @@ export default function Publications() {
 
         <h2>{p.papersHeading}</h2>
         <ul className="pub-list">
-          {pubs.map((pub, i) => (
+          {[...pubs].reverse().map((pub, i) => (
             <li key={i} className="pub-item">
               <div className="pub-year">{pub.year}</div>
               <div className="pub-body">
