@@ -71,6 +71,12 @@ const pubs = [
 
 const pick = (v, lang) => (v && typeof v === 'object' && !v.props ? v[lang] : v)
 
+const byYear = pubs.reduce((acc, pub) => {
+  ;(acc[pub.year] ??= []).unshift(pub)
+  return acc
+}, {})
+const years = Object.keys(byYear).sort((a, b) => b - a)
+
 export default function Publications() {
   const { t, lang } = useLanguage()
   const p = t.publications
@@ -85,10 +91,12 @@ export default function Publications() {
         <p className="hero-tag">{p.tag}</p>
 
         <h2>{p.papersHeading}</h2>
-        <ul className="pub-list">
-          {[...pubs].reverse().map((pub, i) => (
+        {years.map((year) => (
+        <section key={year} className="pub-group">
+          <h3 className="pub-group-year">{year}</h3>
+          <ul className="pub-list">
+          {byYear[year].map((pub, i) => (
             <li key={i} className="pub-item">
-              <div className="pub-year">{pub.year}</div>
               <div className="pub-body">
                 <a
                   href={pub.link}
@@ -117,7 +125,9 @@ export default function Publications() {
               </div>
             </li>
           ))}
-        </ul>
+          </ul>
+        </section>
+        ))}
       </article>
     </PageTransition>
   )
