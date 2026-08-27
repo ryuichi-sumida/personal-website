@@ -41,9 +41,8 @@ const pubs = [
       en: 'MMA-ASIA: A Multilingual and Multimodal Alignment Framework for Culturally-Grounded Evaluation',
       ja: 'MMA-ASIA: 文化的根拠に基づく評価のための多言語・マルチモーダルアライメントフレームワーク',
     },
-    venue: { en: 'ACL 2026 (to appear)', ja: 'ACL 2026（採択）' },
+    venue: { en: 'ACL 2026', ja: 'ACL 2026' },
     authors: { en: 'co-authored', ja: '共著' },
-    note: { en: 'Accepted', ja: '採択' },
     link: 'https://arxiv.org/abs/2510.08608',
   },
   {
